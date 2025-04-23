@@ -9,6 +9,7 @@ const Home = () => {
   const fetchAllProducts = async () => {
     try {
       const res = await getAllProducts();
+      // console.log(res.data)
       setProducts(res.data);
     } catch (error) {
       console.log(error);
