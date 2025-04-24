@@ -7,6 +7,30 @@ const Contact = () => {
   const form = useRef();
   const [error, setError] = useState("");
 
+  const errorMessage=()=> {toast.error('Failed to send Message', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Zoom,
+    });}
+
+  const successMessage=()=> {toast.success('Agam Received Your Mail', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    transition: Zoom,
+    });}
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -18,30 +42,6 @@ const Contact = () => {
       setError("All fields are required.");
       return;
     }
-
-    const errorMessage=()=> {toast.error('Failed to send Message', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Zoom,
-      });}
-
-    const successMessage=()=> {toast.success('Agam Received Your Mail', {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Zoom,
-      });}
 
     setError("");
     emailjs
