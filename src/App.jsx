@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { Home, Contact, About, MyCart } from "./pages";
 import { Navbar, Footer } from "./components";
+import {ToastContainer} from 'react-toastify';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/my-cart" element={<MyCart />} />
         </Routes>
+      <ToastContainer/>
       </main>
 
       <Footer />
