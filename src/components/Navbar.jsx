@@ -8,10 +8,10 @@ const Navbar = () => {
         <Link to='/' className='text-3xl font-bold flex'><img className='h-8 m-1' src="https://fakestoreapi.com/icons/logo.png" alt="" />FakeStore</Link>
             
         <div className='flex gap-8'>
-            <Link to='/' className='text-lg'>Home</Link>
-            <Link to='/my-cart' className='text-lg'>My Cart</Link>
-            <Link to='/about' className='text-lg'>About</Link>
-            <Link to='/contact' className='text-lg'>Contact</Link>
+            <Link to='/' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>Home</Link>
+            <Link to='/my-cart' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>My Cart</Link>
+            <Link to='/about' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>About</Link>
+            <Link to='/contact' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>Contact</Link>
         </div>
       </nav>
   )
