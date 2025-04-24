@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../api/api.js";
 import { Card } from "../components";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -35,7 +36,9 @@ const Home = () => {
     <div className="columns-1 sm:columns-2 md:columns-3 gap-4 p-4">
       {products.map((e) => {
         return (
-          <Card key={e.id} image={e.image} title={e.title} price={e.price} rate={e.rating.rate} />
+          <Link key={e.id} to={`/product/${e.id}`}>
+          <Card image={e.image} title={e.title} price={e.price} rate={e.rating.rate} />
+          </Link>
         );
       })}
     </div>

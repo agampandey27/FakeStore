@@ -10,3 +10,12 @@ export const getAllProducts = async()=>{
         throw(error);
     }
 }
+
+export const getProductById = async( id )=>{
+    try {
+        const response =axios.get(`${BASE_URL}/products/${id}`)
+        return response;
+    } catch (error) {
+        throw(error);
+    }
+}
