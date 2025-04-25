@@ -109,6 +109,7 @@ const MyCart = () => {
           </div>
         </>
       )}
+      <ToastContainer/>
     </div>
   );
 };

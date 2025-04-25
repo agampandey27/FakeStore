@@ -84,6 +84,7 @@ const ProductPage = () => {
       Add to Cart
     </button>
   </div>
+  <ToastContainer/>
 </div>
 
   )
