@@ -8,7 +8,7 @@ const MyCart = () => {
   const { cartItems, removeOneFromCart, removeAllFromCart } = useCartContext();
 
   const errorMessage=(msg)=> {toast.error(msg, {
-      position: "top-center",
+      position: "bottom-left",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: false,

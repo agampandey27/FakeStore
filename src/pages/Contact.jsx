@@ -8,7 +8,7 @@ const Contact = () => {
   const [error, setError] = useState("");
 
   const errorMessage=()=> {toast.error('Failed to send Message', {
-    position: "top-center",
+    position: "bottom-left",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: false,
@@ -20,7 +20,7 @@ const Contact = () => {
     });}
 
   const successMessage=()=> {toast.success('Agam Received Your Mail', {
-    position: "top-center",
+    position: "bottom-left",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: false,

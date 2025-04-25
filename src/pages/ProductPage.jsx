@@ -12,7 +12,7 @@ const ProductPage = () => {
     const {cartItems,setCartItems,totalAmount,setTotalAmount,totalUnits,setTotalUnits}=useCartContext();
 
     const successMessage=()=> {toast.success('Product Added to Cart!', {
-        position: "top-center",
+        position: "bottom-left",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: false,
@@ -24,7 +24,7 @@ const ProductPage = () => {
         });}
 
     const errorMessage=(msg)=> {toast.error(msg, {
-          position: "top-center",
+          position: "bottom-left",
           autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: false,
