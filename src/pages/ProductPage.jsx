@@ -13,7 +13,7 @@ const ProductPage = () => {
 
     const successMessage=()=> {toast.success('Product Added to Cart!', {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: false,
         pauseOnHover: true,
@@ -23,6 +23,18 @@ const ProductPage = () => {
         transition: Zoom,
         });}
 
+    const errorMessage=(msg)=> {toast.error(msg, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Zoom,
+          });}
+
     useEffect(()=>{
         const getData = async()=>{
             try{
@@ -30,7 +42,8 @@ const ProductPage = () => {
                 setProductData(res.data);
             }catch(e){
                 console.log(e);
-                alert("failed to fetch data")
+                // alert("failed to fetch data")
+                errorMessage("Failed to fetch data")
             }
         }
 
