@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
             
         <div className='flex gap-8'>
             <Link to='/' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>Home</Link>
-            <Link to='/my-cart' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>My Cart</Link>
+            <Link to='/my-cart' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400 flex items-center justify-center gap-1'>My Cart <FaShoppingCart/></Link>
             <Link to='/about' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>About</Link>
             <Link to='/contact' className='text-lg transform transition duration-300 hover:scale-110 hover:text-blue-400'>Contact</Link>
         </div>

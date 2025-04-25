@@ -96,6 +96,7 @@ const Contact = () => {
           Send
         </button>
       </form>
+      <p className="text-center text-sm">powered by emailJS</p>
       <ToastContainer/>
     </div>
   )

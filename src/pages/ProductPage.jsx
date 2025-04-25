@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../api/api.js';
+import { useCartContext } from '../context/CartContext.jsx';
+import { ToastContainer, toast, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductPage = () => {
     
     const {id} = useParams();
     const [productData, setProductData] = useState({})
+    const {cartItems,setCartItems,totalAmount,setTotalAmount,totalUnits,setTotalUnits}=useCartContext();
+
+    const successMessage=()=> {toast.success('Product Added to Cart!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Zoom,
+        });}
 
     useEffect(()=>{
         const getData = async()=>{
@@ -20,6 +36,13 @@ const ProductPage = () => {
 
         getData();
     },[])
+
+    const addButtonCartLogic=()=>{
+        setCartItems(prevCart=>[...prevCart,productData]);
+        setTotalAmount(totalAmount+productData.price);
+        setTotalUnits(totalUnits+1);
+        successMessage();
+    }
 
   return (
     <div className="flex flex-col md:flex-row items-center gap-10 p-6 bg-white rounded-xl shadow-md max-w-5xl mx-auto mt-10">
@@ -44,7 +67,7 @@ const ProductPage = () => {
       )}
     </div>
 
-    <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transform transition duration-300 active:scale-90 hover:scale-97">
+    <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transform transition duration-300 active:scale-90 hover:scale-97" onClick={addButtonCartLogic}>
       Add to Cart
     </button>
   </div>
